@@ -1,7 +1,7 @@
 # Учебный проект «Код и Магия» [![Build status][travis-image]][travis-url]
 
 * Студент: [Екатерина Лунева](https://up.htmlacademy.ru/javascript/16/user/241043).
-* Наставник: `Неизвестно`.
+* Наставник: [Александр Махнёв](https://up.htmlacademy.ru/javascript/16/user/7392).
 
 ---
 
