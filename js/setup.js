@@ -49,15 +49,15 @@ var similarWizardTemplate = document.querySelector('#similar-wizard-template')
 
 var wizards = [];
 
-var createWizard = function (nameOrigin, surnameOrigin, coatOrigin, eyesOrigin) {
-  this.name = nameOrigin[randomNumber(0, nameOrigin.length)] + ' ' + surnameOrigin[randomNumber(0, surnameOrigin.length)],
-  this.coatColor = coatOrigin[randomNumber(0, coatOrigin.length)],
-  this.eyesColor = eyesOrigin[randomNumber(0, eyesOrigin.length)]
+var CreateWizard = function (nameOrigin, surnameOrigin, coatOrigin, eyesOrigin) {
+  this.name = nameOrigin[randomNumber(0, nameOrigin.length)] + ' ' + surnameOrigin[randomNumber(0, surnameOrigin.length)];
+  this.coatColor = coatOrigin[randomNumber(0, coatOrigin.length)];
+  this.eyesColor = eyesOrigin[randomNumber(0, eyesOrigin.length)];
 };
 
 var addWizard = function () {
   for (var j = 0; j < 4; j++) {
-    var wizardSample = new createWizard (wizardName, wizardSurname, wizardCoatColor,wizardEyesColor);
+    var wizardSample = new CreateWizard (wizardName, wizardSurname, wizardCoatColor, wizardEyesColor);
     wizards.push(wizardSample);
   }
 };
