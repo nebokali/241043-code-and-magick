@@ -57,7 +57,7 @@ var CreateWizard = function (nameOrigin, surnameOrigin, coatOrigin, eyesOrigin) 
 
 var addWizard = function () {
   for (var j = 0; j < 4; j++) {
-    var wizardSample = new CreateWizard (wizardName, wizardSurname, wizardCoatColor, wizardEyesColor);
+    var wizardSample = new CreateWizard(wizardName, wizardSurname, wizardCoatColor, wizardEyesColor);
     wizards.push(wizardSample);
   }
 };
