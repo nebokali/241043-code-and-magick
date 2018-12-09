@@ -3,9 +3,6 @@
 var randomNumber = function (min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 };
-var addData = function (place, object) {
-  place.push(object);
-};
 
 var wizardName = [
   'Иван',
@@ -51,18 +48,20 @@ var similarWizardTemplate = document.querySelector('#similar-wizard-template')
     .querySelector('.setup-similar-item');
 
 var wizards = [];
-for (var j = 0; j < 4; j++) {
-  var nameNumber = randomNumber(0, wizardName.length);
-  var surnameNumber = randomNumber(0, wizardSurname.length);
-  var coatColorNumber = randomNumber(0, wizardCoatColor.length);
-  var eyesColorNumber = randomNumber(0, wizardEyesColor.length);
-  var wizardSample = {
-    name: wizardName[nameNumber] + ' ' + wizardSurname[surnameNumber],
-    coatColor: wizardCoatColor[coatColorNumber],
-    eyesColor: wizardEyesColor[eyesColorNumber]
-  };
-  addData(wizards, wizardSample);
-}
+
+var createWizard = function (nameOrigin, surnameOrigin, coatOrigin, eyesOrigin) {
+  this.name = nameOrigin[randomNumber(0, nameOrigin.length)] + ' ' + surnameOrigin[randomNumber(0, surnameOrigin.length)],
+  this.coatColor = coatOrigin[randomNumber(0, coatOrigin.length)],
+  this.eyesColor = eyesOrigin[randomNumber(0, eyesOrigin.length)]
+};
+
+var addWizard = function () {
+  for (var j = 0; j < 4; j++) {
+    var wizardSample = new createWizard (wizardName, wizardSurname, wizardCoatColor,wizardEyesColor);
+    wizards.push(wizardSample);
+  }
+};
+addWizard();
 
 var renderWizard = function (wizard) {
   var wizardElement = similarWizardTemplate.cloneNode(true);
@@ -78,5 +77,4 @@ for (var i = 0; i < wizards.length; i++) {
 similarListElement.appendChild(fragment);
 
 userDialog.classList.remove('hidden');
-similarListElement.appendChild(fragment);
 userDialog.querySelector('.setup-similar').classList.remove('hidden');
