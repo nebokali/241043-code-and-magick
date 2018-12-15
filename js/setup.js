@@ -176,13 +176,13 @@ var changeColor = function (element, elementInput, elementColor) {
 
 wizardEyes.addEventListener('click', function () {
   wizardEyes.style.fill = wizardEyesColor[colorIndex];
-  changeColor(wizardEyes, wizardEyesInput, wizardEyesColor)
+  changeColor(wizardEyes, wizardEyesInput, wizardEyesColor);
 });
 wizardCoat.addEventListener('click', function () {
   wizardCoat.style.fill = wizardCoatColor[colorIndex];
-  changeColor(wizardCoat, wizardCoatInput, wizardCoatColor)
+  changeColor(wizardCoat, wizardCoatInput, wizardCoatColor);
 });
 wizardFireball.addEventListener('click', function () {
   wizardFireball.style.background = wizardFireballColor[colorIndex];
-  changeColor(wizardFireball, wizardFireballInput, wizardFireballColor)
+  changeColor(wizardFireball, wizardFireballInput, wizardFireballColor);
 });
