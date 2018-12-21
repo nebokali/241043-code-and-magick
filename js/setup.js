@@ -99,9 +99,16 @@ var showSimilarWizards = function () {
 };
 showSimilarWizards();
 
+var popupOriginPosition = {
+  x: userDialog.offsetLeft,
+  y: userDialog.offsetTop
+};
+
 var openPopup = function () {
   userDialog.classList.remove('hidden');
   document.addEventListener('keydown', closePopupByEsc);
+  popupOriginPosition.x = userDialog.offsetLeft;
+  popupOriginPosition.y = userDialog.offsetTop;
 };
 
 buttonSetupOpen.addEventListener('click', function () {
@@ -117,6 +124,8 @@ buttonSetupOpen.addEventListener('keydown', function (evt) {
 var closePopup = function () {
   userDialog.classList.add('hidden');
   document.removeEventListener('keydown', closePopupByEsc);
+  userDialog.style.top = popupOriginPosition.y + 'px';
+  userDialog.style.left = popupOriginPosition.x + 'px';
 };
 
 var closePopupByEsc = function (evt) {
