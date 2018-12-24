@@ -21,7 +21,7 @@
   });
 
   buttonSetupOpen.addEventListener('keydown', function (evt) {
-    if (evt.keyCode === ENT_KEY) {
+    if (evt.keyCode === window.data.ENT_KEY) {
       openPopup();
     }
   });
@@ -34,7 +34,7 @@
   };
 
   var closePopupByEsc = function (evt) {
-    if (evt.keyCode === ESC_KEY) {
+    if (evt.keyCode === window.data.ESC_KEY) {
       closePopup();
     }
   };
@@ -44,13 +44,13 @@
   });
 
   buttonSetupClose.addEventListener('keydown', function (evt) {
-    if (evt.keyCode === ENT_KEY) {
+    if (evt.keyCode === window.data.ENT_KEY) {
       closePopup();
     }
   });
 
   setupUserName.addEventListener('keydown', function (evt) {
-    if (evt.keyCode === ESC_KEY) {
+    if (evt.keyCode === window.data.ESC_KEY) {
       evt.stopPropagation();
     }
   });
